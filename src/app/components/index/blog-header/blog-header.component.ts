@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, Renderer2, ViewChild} from '@angular/core';
+import {ElementRef} from '@angular/core';
 
 @Component({
   selector: 'app-blog-header',
@@ -6,10 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./blog-header.component.css']
 })
 export class BlogHeaderComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
+  @ViewChild('blogIndexLogo')
+  private eref: ElementRef;
+  constructor(
+    private el: ElementRef,
+    private render: Renderer2) {
   }
 
+  ngOnInit() {
+    const userAgent = window.navigator.userAgent;
+    if (userAgent.indexOf('Chrome') > -1) {
+      const element = this.el.nativeElement.querySelector('#blog-index-logo>span');
+    }
+  }
 }
