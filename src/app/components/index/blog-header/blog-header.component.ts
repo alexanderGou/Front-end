@@ -1,6 +1,7 @@
 import {Component, OnInit, Renderer2, ViewChild} from '@angular/core';
 import {ElementRef} from '@angular/core';
 
+
 @Component({
   selector: 'app-blog-header',
   templateUrl: './blog-header.component.html',

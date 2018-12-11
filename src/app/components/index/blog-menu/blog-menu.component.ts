@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BlogMenuComponent implements OnInit {
 
+  isCollapsed = false;
   constructor() { }
 
   ngOnInit() {
   }
 
+  toggleCollapsed(): void {
+    this.isCollapsed = !this.isCollapsed;
+  }
 }

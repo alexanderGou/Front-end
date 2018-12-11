@@ -1,10 +1,21 @@
 <!-- <link rel="stylesheet" href="blog-header.component.css"> -->
 <div class="indexhead">
-    <div #blogIndexLogo id="blog-index-logo">
-        <span>Blog</span> 
+  <div #blogIndexLogo id="blog-index-logo">
+    <div>
+      <i nz-icon type="menu-fold" theme="outline"></i>
     </div>
-
-    <div id="blog-index-link">
-        <a href="#">login</a>
-    </div>
+    <span>Blog</span>
+  </div>
+  <div id="blog-index-search">
+    <nz-input-group [nzSuffix]="suffixIconSearch">
+      <input type="text" nz-input placeholder="input search text">
+    </nz-input-group>
+    <ng-template #suffixIconSearch>
+      <i nz-icon type="search"></i>
+    </ng-template>
+    <!--<i nz-icon type="search"></i>Search</input>-->
+  </div>
+  <div id="blog-index-link">
+    <a href="#">login</a>
+  </div>
 </div>
