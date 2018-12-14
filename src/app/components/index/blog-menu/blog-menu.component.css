@@ -1,0 +1,20 @@
+#index_menu{
+  position: absolute;
+  top: 10%;
+  left: 0%;
+}
+@media (min-width: 768px) and (max-width: 979px) {
+  #index_menu{
+    top: 8%;
+  }
+}
+@media (min-width: 481px) and (max-width: 767px) {
+  #index_menu{
+    top: 8%;
+  }
+}
+@media (max-width: 480px) {
+  #index_menu{
+    top: 8%;
+  }
+}
