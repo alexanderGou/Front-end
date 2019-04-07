@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {CommunicationService} from '../../../service/communication.service';
+import {Subscription} from 'rxjs';
 
 @Component({
   selector: 'app-blog-menu',
@@ -7,13 +9,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BlogMenuComponent implements OnInit {
 
-  isCollapsed = false;
-  constructor() { }
-
-  ngOnInit() {
+  constructor(private communitService: CommunicationService) {
+    console.log('recived1 ===>' + this.isCollapsed);
   }
 
+  isCollapsed = false;
+  public subscription: Subscription;
+
+  ngOnInit() {
+    this.communitService.getMessage().subscribe((message: any) => {
+      this.isCollapsed = message;
+    });
+  }
+  ngAfterViewInit(): void {
+    this.subscription = this.communitService.getMessage().subscribe(msg => {
+      // 根据msg，来处理你的业务逻辑。
+      console.log('recived ===>' + msg);
+    });
+  }
   toggleCollapsed(): void {
     this.isCollapsed = !this.isCollapsed;
+    console.log(this.isCollapsed);
   }
 }
