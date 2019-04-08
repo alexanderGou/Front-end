@@ -3,10 +3,10 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BlogHeaderComponent } from './components/index/blog-header/blog-header.component';
+import { BlogHeaderComponent } from './components/common/blog-header/blog-header.component';
 import { BlogContentComponent } from './components/index/blog-content/blog-content.component';
-import { BlogFooterComponent } from './components/index/blog-footer/blog-footer.component';
-import { BlogMenuComponent } from './components/index/blog-menu/blog-menu.component';
+import { BlogFooterComponent } from './components/common/blog-footer/blog-footer.component';
+import { BlogMenuComponent } from './components/common/blog-menu/blog-menu.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
